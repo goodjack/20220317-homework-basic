@@ -3,25 +3,21 @@
 #include <ctime>
 using namespace std;
 
-string welcome(string name) {
-    string welcome[5][2] = {
-        {"耶，您成功了，","！"},
-        {"歡迎，","。我們希望您帶個披薩來。"},
-        {"野生的","出現。"},
-        {"\0","跳進了伺服器。"},
-        {"很高興見到您，","\0"}
-    };
-    srand(time(NULL));
-    int n = rand() % 5;
-    string prefix, suffix;
-    prefix = welcome[n][0];
-    suffix = welcome[n][1];
-    return prefix + name + suffix;
-}
 int main() {
-    string name;
-    cout << "Name:";
-    cin >> name;
-
-    cout << welcome(name);
+    srand(time(NULL));
+    int ans = rand() % 100, num, s_num = 1, b_num = 100;
+    while(1){
+        cout << "請輸入一個" << s_num << "~" << b_num << "的數:";
+        cin >> num;
+        if (num >= b_num or num <= s_num){
+            cout << "請重新輸入\n"; 
+        }else if (ans < num){
+            b_num = num;
+        }else if (ans > num){
+            s_num = num;
+        }else{
+            break;
+        }  
+    }
+    cout << "你猜到了";
 }
