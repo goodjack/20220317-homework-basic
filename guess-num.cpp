@@ -9,7 +9,7 @@ int main() {
     while(1){
         cout << "請輸入一個" << s_num << "~" << b_num << "的數:";
         cin >> num;
-        if (num >= b_num or num <= s_num){
+        if (num >= b_num || num <= s_num){
             cout << "請重新輸入\n"; 
         }else if (ans < num){
             b_num = num;
